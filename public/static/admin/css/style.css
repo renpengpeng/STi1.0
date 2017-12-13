@@ -1,0 +1,335 @@
+/*
+	--登录面板--
+*/
+.login_body {
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/login-bg.jpg);
+	background-size: 100 100;
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: -2;
+}
+
+.bo {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	position: fixed;
+	top:0;
+	left: 0;
+	opacity: 0.2;
+	z-index: -1;
+}
+.login  {
+	text-align: center;
+	border-radius: 10PX;
+	background:none;
+	color:#fff;
+}
+.login input {
+	outline: none;
+	background: none;
+	border:1px solid #fff;
+}
+.login_heading {
+	font-size: 20px;
+	font-weight: bold;
+	color: 
+}
+.login_sub {
+	width: 90px;
+	background: #fff;
+	border: 1px solid #999;
+}
+/*
+	---  后台主页  ---
+*/
+.adminBar {
+	height: 60px;
+	line-height: 60px;
+	background-color: #00af64;
+	color:#fff;
+}
+.adminBar a,.adminBar a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.adminBar_logo {
+	float: left;
+	padding-left: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.adminBar_menu {
+	float: right;
+	margin-right: 10px;
+}
+.adminBar_menu ul {
+	list-style-type: none;
+}
+.adminBar_menu li {
+	float: left;
+	min-width: 60px;
+	text-align: center;
+}
+.mobile_menu {
+	display: none;
+	float: right;
+	margin-right: 10px;
+	width: 40px;
+	height: 40px;
+}
+.mobile_menu img {
+	width: 100%;
+}
+.content {
+	margin-top:10px;
+}
+.content_title {
+	height:40px;
+	line-height: 40px;
+	font-size: 20px;
+	padding-left: 10px;
+	border-left: 5px solid #00af64;
+}
+.content_content {
+	margin-top:10px;
+	font-size: 16px;
+	padding: 10px;
+}
+lc {
+	font-size: 18px;
+	color:#f00;
+	font-weight: bold;
+	padding-left:2px;
+	padding-right: 2px;
+}
+/*
+	文章管理界面
+	post-administer.html
+*/
+.well {
+	margin-top :10px;
+}
+.active {
+	background-color: #00af64;
+}
+.badge a {
+	color: #fff;
+}
+.post_administer_so {
+	text-align: center;
+	min-height: 50px;
+}
+.post_administer_so input{
+	height: 60%;
+}
+.post_administer_name {
+	min-width: 300px;
+	outline: none;
+	border:1px solid #00af64;
+	border-radius: 10px;
+}
+.post_administer_sub{
+	background: none;
+	border: 1px solid #00af64;
+	min-width: 100px;
+	color: #00af64;
+	border-radius: 10px;
+}
+.post_administer_page {
+	height: 50px;
+	text-align: center;
+}
+
+/* 
+	@	post-edit.html
+*/
+.post_edit_form {
+
+}
+.post_edit_form input {
+/*	border-radius: 5px;*/
+}
+.post_edit_input_title {
+	margin-top:10px;
+	width: 100%;
+	height: 40px;
+}
+.post_edit_url {
+	height: 30px;
+	line-height: 30px;
+}
+.post_edit_cate {
+	height: 30px;
+	line-height: 40px;
+}
+.post_edit_tags {
+	min-width: 200px;
+}
+.post_edit_content textarea{
+	min-width: 100%;
+	max-width: 100%;
+	height: 450px;
+	min-height: 450px;
+	max-height: 450px;
+}
+.post_edit_subs {
+	margin: 0 auto;
+	min-height: 30px;
+	min-width: 80px;
+	background-color: #fff;
+	border : 1px solid #00af64;
+}
+.post_edit_seoTitle input,.post_edit_seoKeywords input {
+	width: 100%;
+	height: 40px;
+}
+.post_edit_seoDescription textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 60px;
+	max-height: 60px;
+}
+.post_edit_shortcuts {
+	width: 100%;
+	min-height: 40px;
+	padding: 0;
+	margin-bottom: 0px;
+}
+.post_edit_shortcuts button {
+	font-weight: bold;
+}
+.post_edit_shortcuts ul{
+	list-style: none;
+}
+.post_edit_shortcuts li {
+	float: left;
+	text-align: center;
+	min-width: 30px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 0px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+/*
+	@	cate_administer.html
+*/
+.cate_administer_title input ,.cate_administer_sname input ,.cate_administer_seoKeywords input ,.cate_administer_seoDescriptioninput {
+	width: 100%;
+	height: 40px;
+}
+.cate_administer_seoDescription textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 60px;
+	max-height: 60px;
+}
+/*
+	@	tag-administer.html
+*/
+.tag_administer_title input ,.tag_administer_sname input ,.tag_administer_seoKeywords input ,.tag_administer_seoDescriptioninput {
+	width: 100%;
+	height: 40px;
+}
+.tag_administer_seoDescription textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 60px;
+	max-height: 60px;
+}
+
+/*
+	@	cate-edit.html
+*/
+.cate_edit_title input ,.cate_edit_sname input ,.cate_edit_seoKeywords input , .cate_edit_seoDescroptipon input {
+	width: 100%;
+	height: 40px;
+}
+.cate_edit_seoDescription textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 60px;
+	max-height: 60px;
+}
+
+/*
+	@	tag-edit.html
+*/
+.tag_edit_title input ,.tag_edit_sname input ,.tag_edit_seoKeywords input , .tag_edit_seoDescroptipon input {
+	width: 100%;
+	height: 40px;
+}
+.tag_edit_seoDescription textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 60px;
+	max-height: 60px;
+}
+/*
+	@	page-administer.html
+*/
+.page_administer_fast_title input {
+	width: 100%;
+	height: 40px;
+}
+.page_administer_fast_content textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 300px;
+	max-height: 300px;
+}
+
+/*
+	@	page-edit.html
+*/
+.page_edit_title input,.page_edit_sname input ,.page_edit_seoTitle input,
+.page_edit_seoKeywords input {
+	width: 100%;
+	height: 40px;
+}
+.page_edit_content textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 500px;
+	max-height: 500px;
+}
+.page_edit_seoDescription textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 60px;
+	max-height: 60px;
+}
+/*
+	@	系统设置
+*/
+.setting_menu_go {
+	min-height: 100px;
+	line-height: 100px;
+	text-align: center;
+	background-color:#FFFAF0;
+	border-radius:20px;
+	font-size: 20px;
+}
+.setting_menu_go:hover {
+	border:1px solid #999;
+	background: #fff;
+}
+.setting_menu_go a {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.setting_menu_go a:hover {
+	text-decoration: none;
+}
+.menusL {
+	display: block;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	min-width: 50px;
+}
