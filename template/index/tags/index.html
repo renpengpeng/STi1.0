@@ -1,0 +1,50 @@
+ {include file='../template/index/common/head.html'}
+<!-- 开始主体内容 -->
+<div class="container">
+  <!-- 文章展示部分 -->
+  <div class=" col-md-9">
+  <div class="posts" style="border: 1px solid #eee;">
+    <ul>
+      {if condition="(!empty($articlesArr))"}
+      {foreach $articlesArr as $art}
+      <li>
+        <div class="posts_title">
+          <a href="{:url('index/posts/index',['postId'=>$art.id])}">
+            {$art.title}
+          </a>
+        </div>
+        <div class="posts_description">
+          {if condition="(strlen($art.seo_description)>10)"}
+          {$art.seo_description}
+          {else /}
+          {$art.content|mb_substr=0,500,'utf-8'}
+          {/if}
+        </div>
+        <div class="posts_info">
+          {if condition="(!$art.userName) OR (empty($art.userName)) OR ($art.userName ==false)"}
+          作者：暂无&nbsp;&nbsp;
+          {else /}
+          作者：<a href="{:url('index/users/index',['userId'=>$art.user_id])}">{$art.userName}</a>&nbsp;&nbsp;
+          {/if}
+          {if condition="(!$art.cateName) OR (empty($art.cateName)) OR ($art.cateName ==false)"}
+          分类：暂无分类&nbsp;&nbsp;
+          {else /}
+          分类：<a href="{:url('index/cates/index',['cateId'=>$art.user_id])}">{$art.cateName}</a>&nbsp;&nbsp;
+          {/if}
+          发布时间：{$art.time}&nbsp;&nbsp;
+        </div>
+      </li>
+      {/foreach}
+      {else /}
+      <li>没有文章</li>
+      {/if}
+    </ul>
+    <div class="page">
+      <ul>
+        {$pageList->render()}
+      </ul>
+    </div>
+  </div>
+  </div>
+{include file='../template/index/common/sidebar.html'}
+{include file='../template/index/common/footer.html'}

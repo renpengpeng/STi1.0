@@ -1,0 +1,34 @@
+ {include file='../template/index/common/head.html'}
+<!-- 开始主体内容 -->
+<div class="container">
+  <!-- 文章展示部分 -->
+  <div class=" col-md-9">
+  <div class="single" style="border: 1px solid #eee;">
+    <div class="single_title">
+      {$postArr.title}
+    </div>
+    <div class="single_info">
+      作者：{$postArr.userName}&nbsp;&nbsp;
+      分类：{$postArr.cateName}&nbsp;&nbsp;
+      发布时间：{$postArr.time}&nbsp;&nbsp;
+      阅读量：{$postArr.views}&nbsp;&nbsp;
+    </div>
+    <div class="single_content">
+      {$postArr.content}
+    </div>
+     <!-- 开始标签 -->
+    <div class="single_tags">
+       标签：
+    {if condition="(!$postArr.tags) OR (!isset($postArr.tags))"}
+    暂无标签
+    {else /}
+      {volist name="postArr.tags" id='tags'}
+      <a href="{:url('index/tags/index',['tagId'=>$tags.id])}">{$tags.name}</a>
+      {/volist}
+     {/if}
+    </div>
+  </div>
+
+  </div>
+ {include file='../template/index/common/sidebar.html'}
+ {include file='../template/index/common/footer.html'}

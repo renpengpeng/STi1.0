@@ -1,0 +1,68 @@
+{include file='../template/admin/common/head.html'}
+<div class="container">
+	<!-- 标签管理 -->
+	<div class="content">
+		<div class="content_title">
+			标签管理
+		</div>
+		<!-- 所有标签 -->
+		<div class="tag_administer_suoyou">
+			<ul class="list-group">
+				<li class="list-group-item active">所有标签</li>
+				{volist name='tagArr' id='tags'}
+				<li class="list-group-item">
+					{$tags.name}
+					 <span class="badge">
+					 	<a href="{:url('admin/common/deletemessage',[
+					 		'type'			=>	'tag',
+					 		'willChar'		=>	'id',
+					 		'willContent'	=>	$tags.id
+					 	])}">删除</a>
+					 </span>
+					 <span class="badge">
+					 	<a href="{:url('admin/tag/tagedit',['tagId'=>$tags.id])}">编辑</a>
+					 </span>
+				</li>
+				{/volist}
+			</ul>
+			<!-- 分页 -->
+			<div class="pages">
+				{$pageArr->render()}
+			</div>
+		</div>
+	</div>
+	<!-- 添加标签 -->
+	<div class="content_title">
+		添加标签
+	</div>
+	<div class="tag_administer_tianjia">
+		<form action="{:url('admin/common/newmessage',['type'=>'tag'])}" method="post">
+			<!-- 标签标题 -->
+			<div class="form-group">
+				<label>标签名称：</label>
+				<input type="text" name="name" class="form-control">
+			</div>
+			<!-- 标签别名 -->
+			<div class="form-group">
+				<label>标签别名：</label>
+				<input type="text" name="s_name" class="form-control">
+			</div>
+			<!-- 标签SEO keywords -->
+			<div class="form-group">
+				标签seo关键词：
+				<input type="text" name="seo_keywords" class="form-control">
+			</div>
+			<!-- 标签SEO description -->
+			<div class="form-group">
+				标签seo描述：
+				<textarea name="seo_description" class="form-control"></textarea>
+			</div>
+			<!-- 添加按钮 -->
+			<div class="form-group">
+				<input type="submit" name="newTagSub" value='添加' class="btn btn-success">
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>

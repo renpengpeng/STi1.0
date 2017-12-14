@@ -1,0 +1,90 @@
+{include file='../template/admin/common/head.html'}
+<div class="container">
+	<!-- 分类管理 -->
+	<div class="content">
+		<div class="content_title">
+			页面编辑
+		</div><hr>
+		<div class="cateedit">
+			<form action="{:url('admin/common/updatemessage',['type'=>'page'])}" method="post" role='form'>
+				<!-- 隐藏域ID -->
+				<input type="hidden" name="id" value="{$pageArr.id}">
+				<!-- 分类标题 -->
+				<div class="form-group">
+					<label>页面标题：</label>
+					<input type="text" name="title" class="form-control" value="{$pageArr.title}">
+				</div>
+				<!-- 便捷 -->
+				<!-- <div class="post_edit_shortcuts">
+							<ul>
+								<li><button class="btn shortcutsBtn">h1</button></li>							
+								<li><button class="btn shortcutsBtn">h2</button></li>
+
+								<li><button class="btn shortcutsBtn">h3</button></li>
+
+								<li><button class="btn shortcutsBtn">B</button></li>
+
+								<li><button class="btn shortcutsBtn">i</button></li>
+
+								<li><button class="btn shortcutsBtn">ul</button></li>
+
+								<li><button class="btn shortcutsBtn">li</button></li>
+
+								<li><button class="btn shortcutsBtn">a</button></li>
+
+								<li><button class="btn shortcutsBtn">backquote</button></li>
+
+								<li><button class="btn shortcutsBtn">img</button></li>
+
+								<li><button class="btn shortcutsBtn">br</button></li>
+
+								<li><button class="btn shortcutsBtn">hr</button></li>
+
+								<li><button class="btn shortcutsBtn">embed</button></li>
+
+								<li><button class="btn shortcutsBtn">pre</button></li>
+
+								<li><button class="btn shortcutsBtn">code</button></li>
+
+								<li><button class="btn shortcutsBtn">左对齐</button></li>
+
+								<li><button class="btn shortcutsBtn">中对齐</button></li>
+
+								<li><button class="btn shortcutsBtn">右对齐</button></li>
+
+							</ul>
+						</div>
+				<div class="form-group">
+					<label>页面内容：</label>
+					<textarea name="content" class="form-control shortcutsInput" style="min-height:500px;"></textarea> -->
+					<textarea name="content" id="container" ></textarea>
+				</div>
+				<!-- 分类SEO关键词 -->
+				<div class="form-group">
+					<label>页面SEO关键词：</label>
+					<input type="text" name="seo_keywords" class="form-control" value="{$pageArr.seo_keywords}">
+				</div>
+				<!-- 分类SEO描述 -->
+				<div class="form-group">
+					<label>页面SEO描述：</label>
+					<textarea name="seo_description" class="form-control" value="{$pageArr.seo_description}"></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" name="pageEdit" class="btn btn-success">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var ue = UE.getEditor('container',{
+		initialFrameHeight:500
+	});
+	ue.ready(function() {
+    //设置编辑器的内容
+    ue.setContent('{$pageArr.content}');
+   
+});
+</script>
+</body>
+</html>

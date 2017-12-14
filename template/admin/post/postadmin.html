@@ -1,0 +1,49 @@
+{include file='../template/admin/common/head.html'}
+<div class="container">
+
+<!-- 文章管理页面html -->
+<div class="content">
+	<div class="content_title">
+		写文章:<a href="{:url('admin/post/postnew')}">点我新建文章</a>
+	</div>
+	<div class="content_title">
+		文章管理
+	</div>
+	<div class="content_content">
+		<!-- 文章搜索 -->
+		<div class="form-group" style="text-align: center;">
+			<form action="{:url('admin/post/postsearch')}" method="post">
+				<input type="text" name="post_search_title" class="form-control" placeholder="请输入文章关键字"><br>
+			<input type="submit" name="post_administer_sub" value="搜索" class="btn btn-success" style="width: 80%;">
+			</form>
+		</div>
+		<ul class="list list-group">
+			<li class="list-group-item active">共{$postNums}篇文章</li>
+			{foreach $postArr as $posts}
+			<li class="list-group-item">
+					<a href="">{$posts.title}</a>
+					<span class="badge list_up"><a href="{:url('admin/post/postedit',[
+						'postId'=>$posts.id
+					])}">编辑</a></span>
+				    <span class="badge">
+				    	<a href="{:url('admin/Common/deletemessage/',[
+				    		'type'=>'post',
+				    		'willChar'=>'id',
+				    		'willContent'=>$posts.id
+				    	])}">删除</a>
+				    </span>
+				    <span class="badge">{$posts.views}</span>
+			</li>
+			{/foreach}
+		</ul>
+	</div>
+	<div class="post_administer_page">
+		{$postPageArr->render()}
+	</div>
+</div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

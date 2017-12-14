@@ -1,0 +1,21 @@
+{include file='../template/admin/common/head.html'}
+<div class="container">
+	<div class="content">
+		<div class="content_title">
+			{$searchstr}的搜索结果
+		</div>
+		<div class="list">
+			{if condition="(empty($searchArr))"}
+				<p style="text-align:center;">没有文章</p>
+			{else /}
+				<ul class="list-group">
+				{volist name="searchArr" id="postArr"}
+					<li class="list-group-item">{$postArr.title}</li>
+				{/volist}
+				</ul>
+			{/if}
+		</div>
+	</div>
+</div>
+</body>
+</html>

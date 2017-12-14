@@ -1,0 +1,26 @@
+{include file='../template/admin/common/head.html'}
+<div class="container">
+	<!-- 主内容 -->
+	<div class="content">
+		<div class="content_title">
+			站点统计
+		</div>
+		<div class="content_content">
+			共<lc>{$cateNums}</lc>个分类、
+			<lc>{$postNums}</lc>篇文章、
+			<lc>{$tagNums}</lc>个标签、
+			<lc>{$pageNums}</lc>个页面
+		</div>
+		<div class="content_title">
+			登录信息
+		</div>
+		<div class="content_content">
+			<p>上次登录IP:<lc>{$lastLoginIp}</lc></p>
+			<p>上次登录时间：<lc>{$lastLoginTime}</lc></p>
+			<hr>
+			<p>本次登录IP:<lc>{$thisLoginIp}</lc></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

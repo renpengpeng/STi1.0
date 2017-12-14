@@ -1,0 +1,50 @@
+{include file='../template/admin/common/head.html'}
+
+<div class="container">
+	<div class="content">
+		<div class="content_title">
+			系统设置
+		</div>
+		<div class="xitong_form">
+			<form action="{:url('admin/setting/xitongedit')}" method="post">
+				<div class="form-group">
+					<label>网站标题</label>
+					<input type="text" name="web_title" class="form-control" value="{$setArr.web_title}">
+				</div>
+				<div class="form-group">
+					<label>网站地址<small>请以绝对地址开头 比如：http://demo.com</small></label>
+					<input type="text" name="web_url" class="form-control" value="{$setArr.web_url}">
+				</div>
+				<div class="form-group">
+					<label>网站logo<small>请以图片地址加入，比如&lt;img src="">，不设置默认为网站标题</small></label>
+					<input type="text" name="web_logo" class="form-control" value="{$setArr.web_logo}">
+				</div>
+				<div class="form-group">
+					<label>网站关键词 <small>请以英文逗号分隔</small></label>
+					<input type="text" name="web_keywords" class="form-control" value="{$setArr.web_keywords}">
+				</div>
+				<div class="form-group">
+					<label>网站描述</label>
+					<input type="text" name="web_description" class="form-control" value="{$setArr.web_description}">
+				</div>
+				<div class="form-group">
+					<label>标题分隔符</label>
+					<input type="text" name="title_splicing" class="form-control" value="{$setArr.title_splicing}">
+				</div>
+				<div class="form-group">
+					<label>前台每页显示多少篇文章</label>
+					<input type="text" name="show_page_num" class="form-control" value="{$setArr.show_page_num}">
+				</div>
+				<div class="form-group">
+					<label>网站注册时间 格式为：xxxx-xx-xx</label>
+					<input type="text" name="web_reg_time" class="form-control" value="{$setArr.web_reg_time}">
+				</div>
+				<div class="form-group">
+					<input type="submit" value="提交" class="btn btn-success">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

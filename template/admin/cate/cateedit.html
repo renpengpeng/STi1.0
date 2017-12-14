@@ -1,0 +1,40 @@
+{include file='../template/admin/common/head.html'}
+<div class="container">
+	<!-- 分类管理 -->
+	<div class="content">
+		<div class="content_title">
+			分类编辑
+		</div><hr>
+		<div class="cateedit">
+			<form action="{:url('admin/common/updatemessage',['type'=>'cate'])}" method="post" role='form'>
+				<!-- 隐藏域ID -->
+				<input type="hidden" name="id" value="{$cateArr.id}">
+				<!-- 分类标题 -->
+				<div class="form-group">
+					<label>分类标题：</label>
+					<input type="text" name="name" class="form-control" value="{$cateArr.name}">
+				</div>
+				<!-- 分类别名 -->
+				<div class="form-group">
+					<label>分类别名：</label>
+					<input type="text" name="s_name" class="form-control" value="{$cateArr.s_name}">
+				</div>
+				<!-- 分类SEO关键词 -->
+				<div class="form-group">
+					<label>分类SEO关键词：</label>
+					<input type="text" name="seo_keywords" class="form-control" value="{$cateArr.seo_keywords}">
+				</div>
+				<!-- 分类SEO描述 -->
+				<div class="form-group">
+					<label>分类SEO描述：</label>
+					<textarea name="seo_description" class="form-control">{$cateArr.seo_description}</textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" name="cateEdit" class="btn btn-success">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

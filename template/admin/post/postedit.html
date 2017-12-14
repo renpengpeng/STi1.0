@@ -1,0 +1,117 @@
+{include file='../template/admin/common/head.html'}
+<div class="container">
+	<!-- 文章编辑 -->
+	<div class="content">
+		<div class="content_title">
+			文章编辑	<a href="{:url('admin/post/postadmin')}"><button class="btn">取消编辑</button></a>
+		</div>
+		<div class="content_content">
+			<div class="post_edit_form">
+				
+				<form action="{:url('admin/common/updateMessage',[
+					'type'=>'post'
+				])}" method="post">
+				<!-- 隐藏域文章id -->
+				<input type="hidden" name="id" value="{$postArr.id}">
+					<!-- 文章分类 -->
+					<div class="form-group ">
+						文章分类：
+						<select name="cates_id" class="form-control input-sm">
+							<option value="{$postArr.cates_id}">{$postArr.cateName}</option>
+						</select>
+					</div>
+					<!-- 文章标题 -->
+					<div class="form-group">
+						<input type="text" name="title" class="form-control" value="{$postArr.title}">
+					</div>
+					<!-- 文章链接 -->
+					<div class="form-group">
+						预计链接：
+						<a href="javascrpt:" class="btn">http://{$_SERVER['HTTP_HOST']}/{$postArr.id}.html</a>
+					</div>
+					<!-- 文章内容 -->
+					
+					<div class="form-group">
+						<!-- 添加快捷代码 -->
+						<!-- <div class="post_edit_shortcuts">
+							<ul>
+								<li><button class="btn shortcutsBtn">h1</button></li>							
+								<li><button class="btn shortcutsBtn">h2</button></li>
+
+								<li><button class="btn shortcutsBtn">h3</button></li>
+
+								<li><button class="btn shortcutsBtn">B</button></li>
+
+								<li><button class="btn shortcutsBtn">i</button></li>
+
+								<li><button class="btn shortcutsBtn">ul</button></li>
+
+								<li><button class="btn shortcutsBtn">li</button></li>
+
+								<li><button class="btn shortcutsBtn">a</button></li>
+
+								<li><button class="btn shortcutsBtn">backquote</button></li>
+
+								<li><button class="btn shortcutsBtn">img</button></li>
+
+								<li><button class="btn shortcutsBtn">br</button></li>
+
+								<li><button class="btn shortcutsBtn">hr</button></li>
+
+								<li><button class="btn shortcutsBtn">embed</button></li>
+
+								<li><button class="btn shortcutsBtn">pre</button></li>
+
+								<li><button class="btn shortcutsBtn">code</button></li>
+
+								<li><button class="btn shortcutsBtn">左对齐</button></li>
+
+								<li><button class="btn shortcutsBtn">中对齐</button></li>
+
+								<li><button class="btn shortcutsBtn">右对齐</button></li>
+
+							</ul>
+						</div>
+						<textarea name="content" class="form-control shortcutsInput" style="min-height: 500px;">{$postArr.content}</textarea> -->
+						<!-- 百度富文本 -->
+						<textarea name="content" id="container" ></textarea>
+					</div>
+					<div class="form-group">
+						
+						标签(用英文逗号分隔)：
+						<input type="input" name="tags" class="form-control" value="{$postArr.tagName}">
+					</div>
+					<hr>
+					<!-- SEO部分 -->
+					<div class="form-group">
+						seo标题：
+						<input type="text" name="seo_title" value="{$postArr.seo_title}" class="form-control">
+					</div>
+					<div class="form-group">
+						seo关键字(用英文逗号分隔)：
+						<input type="text" name="seo_keywords" value="{$postArr.seo_keywords}" class="form-control">
+					</div>
+					<div class="form-group">
+						seo描述：
+						<textarea name="seo_description" class="form-control">{$postArr.seo_description}</textarea>
+					</div>
+					<!-- 提交按钮 -->
+					<input type="submit" class="btn btn-scuess" value="提交" >
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var ue = UE.getEditor('container',{
+		initialFrameHeight:500
+	});
+	ue.ready(function() {
+    //设置编辑器的内容
+    ue.setContent('{$postArr.content}');
+   
+});
+</script>
+</body>
+</html>

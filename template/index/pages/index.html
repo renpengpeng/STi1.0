@@ -1,0 +1,19 @@
+ {include file='../template/index/common/head.html'}
+<!-- 开始主体内容 -->
+<div class="container">
+  <!-- 文章展示部分 -->
+  <div class=" col-md-9">
+  <div class="pages" style="border: 1px solid #eee;">
+    <!-- 页面标题 -->
+    <div class="pages_title">
+        <h3>{$articlesArr.title}</h3>
+    </div>
+    <!-- 页面内容 -->
+    <div class="pages_content">
+      {$articlesArr.content}
+
+    </div>
+  </div>
+  </div>
+ {include file='../template/index/common/sidebar.html'}
+ {include file='../template/index/common/footer.html'}

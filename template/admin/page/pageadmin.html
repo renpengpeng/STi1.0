@@ -1,0 +1,60 @@
+{include file='../template/admin/common/head.html'}
+<div class="container">
+	<!-- 分类管理 -->
+	<div class="content">
+		<div class="content_title">
+			页面管理
+		</div>
+		<!-- 所有分类 -->
+		<div class="cate_administer_suoyou">
+			<ul class="list-group">
+				<li class="list-group-item active">所有分类</li>
+				{volist name="pageArr" id="pages"}
+				<li class="list-group-item">
+					{$pages.title}
+					 <span class="badge">
+					 	<a href='javascript:'>删除</a>
+					 </span>
+					 <span class="badge">
+					 	<a href="{:url('admin/page/Pageedit',['pageId'=>$pages.id])}">编辑</a>
+					 </span>
+				</li>
+				{/volist}
+			</ul>
+		</div>
+	</div>
+	<!-- 添加分类 -->
+	<div class="content_title">
+		添加页面
+	</div>
+	<div class="cate_administer_tianjia">
+		<form action="{:url('admin/common/newmessage',['type'=>'page'])}" method="post">
+			<!-- 分类标题 -->
+			<div class="form-group">
+				页面标题：
+				<input type="text" name="title" class="form-control">
+			</div>
+			<!-- 分类别名 -->
+			<div class="form-group">
+				页面内容：
+				<textarea name="content" class="form-control"></textarea>
+			</div>
+			<!-- 分类SEO keywords -->
+			<div class="form-group">
+				页面seo关键词：
+				<input type="text" name="seo_keywords" class="form-control">
+			</div>
+			<!-- 分类SEO description -->
+			<div class="form-group">
+				页面seo描述：
+				<textarea name="seo_description" class="form-control"></textarea>
+			</div>
+			<!-- 添加按钮 -->
+			<div class="form-group">
+				<input type="submit" name="newPageSub" value='添加' class="btn btn-success">
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>
